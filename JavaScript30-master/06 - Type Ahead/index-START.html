@@ -19,10 +19,6 @@
 
       const cities = [];
 
-      //fetch(endpoint)
-      //	.then(blob => blob.json())
-      //.then(data => console.log(data))
-
       fetch(endpoint)
         .then((blob) => blob.json())
         .then((data) => cities.push(...data));
