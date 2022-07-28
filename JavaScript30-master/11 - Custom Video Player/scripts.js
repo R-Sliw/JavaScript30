@@ -31,7 +31,7 @@ function skip() {
   video.currentTime = video.currentTime + parseFloat(this.dataset.skip);
 }
 
-function hendelRangeUpdate() {
+function handelRangeUpdate() {
   video[this.name] = this.value;
   console.log(this.name);
   console.log(this.value);
@@ -59,12 +59,12 @@ toggle.addEventListener("click", togglePlayer);
 
 skipButtons.forEach((button) => button.addEventListener("click", skip));
 
-ranges.forEach((range) => range.addEventListener("change", hendelRangeUpdate));
+ranges.forEach((range) => range.addEventListener("change", handelRangeUpdate));
 
 progress.addEventListener("click", barPlace);
 
-let puchdown = false;
+let mousedown = false;
 
-progress.addEventListener("mousemove", (e) => puchdown && barPlace(e));
-progress.addEventListener("mousedown", () => (puchdown = true));
-progress.addEventListener("mouseup", () => (puchdown = false));
+progress.addEventListener("mousemove", (e) => mousedown && barPlace(e));
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));
